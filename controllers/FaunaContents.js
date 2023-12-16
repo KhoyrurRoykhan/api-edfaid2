@@ -18,7 +18,7 @@ export const AddFauna = async (req, res) => {
 
     const { name, kategori_1, kategori_2, description, desc_habitat, desc_populasi } = req.body;
 
-    file.mv(`./images/${image_name}`, async(err)=>{
+    file.mv(`./public/images/${image_name}`, async(err)=>{
         if(err) return res.status(500).json({msg: err.message});
         try {
             const newFauna = await FaunaContentModel.create({
